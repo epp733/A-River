@@ -55,90 +55,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // Content arrays
 const poems = [
     {
-        title: "The Mississippi and the City",
-        content: `The swollen Mississippi
-submerges cobblestone streets
-in muddy waters lapping
-at weathered red brick of abandoned factories
-where piano keys once
-danced
-in syncopated joy.
+        title: "Catalysis",
+        content: `Clouded mountains, unreal   publiC
+Axle whispers, dusty         EuropaA
+Typist's bones, hollow               caT
+Automatic fog, empty        AlbertA
+Loitering silk, humble              BilL
+Yellow standards, mudcracked daY
+Sawdust splendour, broken   pearlS
+Ionian whispers, sandy            HelI
+Swell candles, dirty                dogS
 
-Silent and weathered, a constant presence
-observing the river's ceaseless flow.
-
-Ancient earthen mounds,
-erected by forgotten hands,
-stand sentinel on the river's banks,
-their walls once tumbled down
-like ancient city walls at trumpet's blast,
-now silent witnesses
-to the river's eternal ebb
-and flow.
-
-Contemplating the mounds, ancient and wise,
-their secrets hidden from the world.
-
-Blues notes blow
-like sacred trumpets,
-circling the city
-for seven days and nights,
-until the walls come tumbling,
-tumbling down,
-spilling from hole-in-the-wall clubs down Washington Ave's
-garish
-glow
-drawing lonely figures
-to sway.
-
-Listening to the music's soulful cry,
-a sound that echoes through the streets.
-
-A gleaming stainless steel curve
-rises in a graceful arc,
-catching the sun's rays,
-a modern monument
-to the city's spirit
-above the churning
-brown
-current.
-
-Gazing at the arch, a symbol of dreams,
-its presence rising above the river.
-
-An electric twang
-reverberates through the city streets,
-a pulsing backbeat
-propelling bodies to move
-with youthful abandon,
-urgent,
-rousing,
-galvanizing
-this place
-of deep roots
-and the mighty river's
-timeless
-power.
-
-Feeling the city's heartbeat, the rhythm of life,
-a pulse that never stops.`
+Mandoline mountains, stony   damM
+Antique beast, yellow         VictoriA
+Clatter violin, neon               musicC
+Hordes whisper, millionaire    beacH
+Inexplicable restaurants, foggy  taxI
+Nymphs swarming, empty     queeN
+Endless signs, violet             silencE
+`
     },
     {
-        title: "Walls Come Tumbling Down",
-        content: `Calloused hands tremble, sepia memories flutter,
-Mounds and constellations witness the walls come tumbling down.
-Dust devils dance to blues notes, sacred trumpets mutter,
-As death creeps in, faith unravels, and the farmhouse crumbles down.
-
-Storms brew, locusts hum "Ashes to ashes" in the wheat,
-Concrete jungles rise, steel monuments catch the sun's rays.
-She drowns in neon, feeling the city's relentless heartbeat,
-He ascends, grasping for redemption in smoke-filled haze.
-
-Prodigal daughter, lost son, ghost of a pink dress,
-Kneel at the altar of a broken home, a shattered throne.
-The land gasps its last as the walls come tumbling down,
-Memories scatter like ashes, silence and tears alone.`
+        title: "Mechanic Process",
+        content: `
+Gears		[T]urn[,]	[P]owering[,]	[T]he		[E]ngine[.]
+[T]urn[,]	wheels,	    rotate[the]	    gears		[smoothly][.]
+[P]owering	pistons,	wheels[,]	    drive		shafts[.]
+[T]he 		engine[and]	run[s],		    pistons[']	move[.]
+[E]ngine[.]	gears[.]	drive[.]		parts[.]	efficiently.
+`
     },
     {
         title: "Broken Walls",
@@ -232,14 +177,10 @@ With that thought, Joe relaxed into his seat, ready for whatever absurdity await
 
 const essays = [
     {
-        title: "The Heartbeat of a Changing City",
-        content: `The rhythm of a city is a complex symphony, composed of countless individual stories and experiences. As urban landscapes evolve, driven by the relentless march of progress, they retain echoes of their past in unexpected places.
-
-Consider the Mississippi River, a constant presence that has witnessed centuries of change. Its waters reflect both the gleaming steel of modern architecture and the weathered bricks of abandoned factories. This juxtaposition of old and new is the very essence of a city's heartbeat.
-
-The pulse quickens in the neon-lit streets, where the energy of youth collides with the wisdom of age. It slows in quiet corners where ancient earthen mounds stand as silent sentinels, holding secrets of long-forgotten civilizations. This ebb and flow, this constant tension between past and present, tradition and innovation, is what gives a city its unique character.
-
-As we navigate these ever-changing urban environments, we must remember that we are both observers and participants in this ongoing transformation. Our actions today will become the echoes of tomorrow, contributing to the ceaseless rhythm of urban life.`
+        title: "Essay on Mechanic Process",
+        content: `	At the center of a poem is its tension between form and content. If a poem is an out-pouring of emotion, its form should be rudimentary, only assisting when needed. There should be long lines to avoid stoppage and clogging. Its edges should be flattened out, angles should become lines, breakage becomes continuance. If a poem is a machine, its edges are the content of the poem. They are where the eyes glance when this object is held. Its purpose is to follow the piping to the source of what it contains. Its purpose is to hold the wiring to maybe feel the current it contains. It is not difficult to sense the contradiction here. The rudimentary, flattened lines are just a simple and efficient machine. The container must contain something even if it is just containment. 
+	The above object is noticeably a machine. Its contents are mechanistic. Any innovation in it is in the intricacy of its motion. Each piece is part of a horizontal and vertical exchange of energy. Every word and symbol outside of a bracket was generated by AI. The layout and order of each word and symbol outside of a bracket was also. This is what the Intelligence was asked to do: “I want you to write a poem that consists of five lines, each with five words in them. Each line should be one complete sentence. In addition to this, the first words of each line should also form a complete sentence in order. This rule should also apply to the second, third, fourth, and fifth words of each line. The poem should describe a mechanical process.” It had difficulty with this task. It might be the case that AI is better at out-pouring than form-following when that form has an even somewhat gimmicky complexity. As it kept attempting to create the poem I asked it to create, it could not create sentences that were even technically complete and grammatically correct. As I prodded it in the right direction, it soon began to recognize its mistakes even as it was making them: “Fourth words: "The gears wheels cogs and" (incomplete - my mistake)” and “Fourth words: "The cogs gears wheels in" (incomplete - still an issue).” At this point, my decision was to accept the result as a machine with rusty gears and unfastened conveyor belts. A machine that powered and turned towards an ironically corroded “efficiently.” I took to adding brackets so that with or without, depending on the direction of the line, the contained word, letter or symbol, a coherent sentence could be made out of each of the ten lines. Many of the sentences are imperatives. The line formed by the second column begs the reader to “Turn wheels, pistons, engine and gears.” The fifth column only works as the entire word “smoothly” is bracketed out, resulting in “Engine shafts move efficiently.” Though the smoothness and efficiency of this object are doubtful, the result is something of a Rube Goldberg machine of a poem. It is an out-pouring of form and a container of containment. 
+`
     },
     {
         title: "Echoes of the Past in Modern Landscapes",
