@@ -200,3 +200,38 @@ nav {
     background-color: transparent;
     box-shadow: none;
 }
+/* Styles for About and Submissions page */
+#content h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#content h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#content p {
+    margin-bottom: 15px;
+}
+
+#content ul.list-group,
+#content ol.list-group {
+    margin-bottom: 20px;
+}
+
+#content .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+
+#content ol.list-group {
+    padding-left: 20px;
+}
+
+#content ol.list-group .list-group-item {
+    list-style-type: decimal;
+    display: list-item;
+}
