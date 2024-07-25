@@ -1,207 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.getElementById('back-button');
-    const content = document.getElementById('content');
 
-    backButton.addEventListener('click', () => {
-        window.location.href = 'index.html';
-    });
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            window.history.back();
+        });
+    }
 
-    // Function to load content for each page
-    function loadPageContent() {
+    // Function to highlight the current page in the navigation
+    function highlightCurrentPage() {
         const currentPage = window.location.pathname.split('/').pop();
-        let items;
-        switch (currentPage) {
-            case 'poetry.html':
-                items = poems;
-                break;
-            case 'fiction.html':
-                items = stories;
-                break;
-            case 'non-fiction.html':
-                items = essays;
-                break;
-            default:
-                return; // Exit if on index page
-        }
+        const navLinks = document.querySelectorAll('.nav-link');
 
-        let html = '<div class="list-group">';
-        items.forEach((item, index) => {
-            html += `<a href="#" class="list-group-item item-link" data-index="${index}">${item.title}</a>`;
-        });
-        html += '</div>';
-        content.innerHTML = html;
-
-        // Add listeners to item links
-        document.querySelectorAll('.item-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const index = e.target.getAttribute('data-index');
-                showItem(items[index]);
-            });
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
         });
     }
 
-    function showItem(item) {
-        content.innerHTML = `
-            <h2>${item.title}</h2>
-            <div class="content-text">${item.content}</div>
-        `;
-    }
-
-    // Load content for the current page
-    loadPageContent();
+    // Call the function to highlight the current page
+    highlightCurrentPage();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const backButton = document.getElementById('back-button');
 
-// Content arrays
-const poems = [
-    {
-        title: "Catalysis",
-        content: `Clouded mountains, unreal   publiC
-Axle whispers, dusty         EuropaA
-Typist's bones, hollow               caT
-Automatic fog, empty        AlbertA
-Loitering silk, humble              BilL
-Yellow standards, mudcracked daY
-Sawdust splendour, broken   pearlS
-Ionian whispers, sandy            HelI
-Swell candles, dirty                dogS
-
-Mandoline mountains, stony   damM
-Antique beast, yellow         VictoriA
-Clatter violin, neon               musicC
-Hordes whisper, millionaire    beacH
-Inexplicable restaurants, foggy  taxI
-Nymphs swarming, empty     queeN
-Endless signs, violet             silencE
-`
-    },
-    {
-        title: "Mechanic Process",
-        content: `
-Gears		[T]urn[,]	[P]owering[,]	[T]he		[E]ngine[.]
-[T]urn[,]	wheels,	    rotate[the]	    gears		[smoothly][.]
-[P]owering	pistons,	wheels[,]	    drive		shafts[.]
-[T]he 		engine[and]	run[s],		    pistons[']	move[.]
-[E]ngine[.]	gears[.]	drive[.]		parts[.]	efficiently.
-`
-    },
-    {
-        title: "Broken Walls",
-        content: `Calloused hands tremble,
-sepia memories flutter,
-Mounds and constellations witness
-the walls come tumbling down.
-
-Dust devils dance
-to blues notes,
-sacred trumpets mutter,
-As death creeps in,
-faith unravels,
-and the farmhouse crumbles down.
-
-Storms brew,
-locusts hum
-"Ashes to ashes" in the wheat,
-Concrete jungles rise,
-steel monuments catch the sun's rays.
-
-She drowns in neon,
-feeling the city's relentless heartbeat,
-He ascends, grasping for redemption
-in smoke-filled haze.
-
-Prodigal daughter,
-lost son,
-ghost of a pink dress,
-Kneel at the altar
-of a broken home,
-a shattered throne.
-
-The land gasps its last
-as the walls come tumbling down,
-Memories scatter like ashes,
-silence and tears alone.`
+    if (backButton) {
+        backButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            window.history.back(); // Go back to the previous page
+        });
     }
-];
 
-const stories = [
-    {
-        title: "The River's Whisper",
-        content: `The Mississippi's murky waters lapped at Eliza's feet as she stood on the weathered cobblestones. The abandoned factory loomed behind her, its red bricks telling tales of a bygone era. As dusk settled, the river seemed to whisper secrets of the ancient mounds that once stood proud on its banks.
+    // Function to highlight the current page in the navigation
+    function highlightCurrentPage() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
 
-A mournful trumpet wailed in the distance, its blues notes carried on the breeze. Eliza closed her eyes, swaying gently to the rhythm that seemed to pulse through the very ground beneath her. When she opened them again, the city's neon lights flickered to life, casting an eerie glow on the river's surface.
-
-As she turned to leave, her gaze fell upon the gleaming arch that stretched across the sky. A symbol of progress, it stood in stark contrast to the crumbling buildings around it. Eliza smiled, feeling the city's heartbeat sync with her own. In that moment, she understood that like the river, this place would continue to flow, carrying the weight of its history while forging ahead into an uncertain future.`
-    },
-    {
-        title: "The Locket Thief",
-        content: `Old man Harlow shuffled down the worn path, his arthritic fingers wrapped around the handle of a rusty wheelbarrow. The autumn wind whispered through the cornfields, carrying whispers of secrets long buried. He paused at the shed, its weathered door groaning as he pushed it open.
-
-Inside, nestled behind jars of preserves and dusty farm tools, sat a lead box. Harlow's gnarled hands trembled as he lifted its heavy lid. The locket inside gleamed, untarnished by time.
-
-Miles away, a young woman named Eliza traced her fingers along the spine of an ancient book. As she opened it, a cloud of dust danced in the library's dim light. The pages were brittle, yellowed with age, but the words still held power.
-
-Eliza read, lost in a world of clock towers and dethroned kings. She didn't notice the weight around her neck growing lighter, the locket she always wore slowly fading away.
-
-Back in his shed, Harlow smiled a toothless grin. Another treasure reclaimed, another piece of the past stolen back from those who didn't understand its true value.
-
-As night fell, Eliza closed the book with a sigh. Her hand instinctively reached for her locket, finding only bare skin. Panic rose in her throat as she retraced her steps through town, searching desperately.
-
-Her journey led her across railroad tracks, past boarded-up windows and vacant lots. The town grew stranger, wilder at its edges. A figure by the creek whistled an eerie tune, and shapes moved in the cornfields that defied description.
-
-Finally, exhausted, Eliza found herself at a ramshackle farmhouse. Old man Harlow stood in the doorway, eyes glinting with otherworldly knowledge.
-
-"You've come for what's yours," he said, not unkindly. "But are you prepared for the price of keeping it?"
-
-Eliza hesitated, her hand outstretched. In that moment, she understood that some treasures, once reclaimed, could never truly be let go again.`
-    },
-    {
-        title: "Everyman",
-        content: `Joe Average sighed, adjusting his tie as he stepped out into the chaos. The salad spinner sunset was in full swing, flinging neon mayo across cloud rinds. He dodged a shoelace comet tripping over a moonbeam hurdle, nearly stumbling into a giggling pothole that seemed eager to swallow his unicycle dreams whole.
-
-"Just another Tuesday," Joe muttered, unfazed.
-
-He ducked as an origami thunderstorm creased overhead, folding lightning into paper airplanes that zipped past his ears. Freckle constellations migrated across the marshmallow sky, spelling out cosmic gossip he couldn't quite decipher.
-
-At the bus stop, a snoring book mumbled bedtime stories to insomniac ink puddled beneath a bench. Joe checked his watch - a hiccupping metronome that conducted symphonies of falling cutlery instead of telling time.
-
-The bus arrived, driven by tap-dancing shadows tangoing with moth-eaten spotlights. Joe boarded, finding a seat next to a yawning keyhole exhaling locksmith lullabies.
-
-As they passed jellybean beaches where tourists peeled off velcro sunburns, Joe pondered his existence in this perpetually bewildering world. He chuckled, realizing his life was far from average after all.
-
-"Maybe," he mused, "being ordinary in an extraordinary universe is its own kind of special."
-
-With that thought, Joe relaxed into his seat, ready for whatever absurdity awaited him at the office.`
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
     }
-];
 
-const essays = [
-    {
-        title: "Essay on Mechanic Process",
-        content: `	At the center of a poem is its tension between form and content. If a poem is an out-pouring of emotion, its form should be rudimentary, only assisting when needed. There should be long lines to avoid stoppage and clogging. Its edges should be flattened out, angles should become lines, breakage becomes continuance. If a poem is a machine, its edges are the content of the poem. They are where the eyes glance when this object is held. Its purpose is to follow the piping to the source of what it contains. Its purpose is to hold the wiring to maybe feel the current it contains. It is not difficult to sense the contradiction here. The rudimentary, flattened lines are just a simple and efficient machine. The container must contain something even if it is just containment. 
-	The above object is noticeably a machine. Its contents are mechanistic. Any innovation in it is in the intricacy of its motion. Each piece is part of a horizontal and vertical exchange of energy. Every word and symbol outside of a bracket was generated by AI. The layout and order of each word and symbol outside of a bracket was also. This is what the Intelligence was asked to do: “I want you to write a poem that consists of five lines, each with five words in them. Each line should be one complete sentence. In addition to this, the first words of each line should also form a complete sentence in order. This rule should also apply to the second, third, fourth, and fifth words of each line. The poem should describe a mechanical process.” It had difficulty with this task. It might be the case that AI is better at out-pouring than form-following when that form has an even somewhat gimmicky complexity. As it kept attempting to create the poem I asked it to create, it could not create sentences that were even technically complete and grammatically correct. As I prodded it in the right direction, it soon began to recognize its mistakes even as it was making them: “Fourth words: "The gears wheels cogs and" (incomplete - my mistake)” and “Fourth words: "The cogs gears wheels in" (incomplete - still an issue).” At this point, my decision was to accept the result as a machine with rusty gears and unfastened conveyor belts. A machine that powered and turned towards an ironically corroded “efficiently.” I took to adding brackets so that with or without, depending on the direction of the line, the contained word, letter or symbol, a coherent sentence could be made out of each of the ten lines. Many of the sentences are imperatives. The line formed by the second column begs the reader to “Turn wheels, pistons, engine and gears.” The fifth column only works as the entire word “smoothly” is bracketed out, resulting in “Engine shafts move efficiently.” Though the smoothness and efficiency of this object are doubtful, the result is something of a Rube Goldberg machine of a poem. It is an out-pouring of form and a container of containment. 
-`
-    },
-    {
-        title: "Echoes of the Past in Modern Landscapes",
-        content: `In the shadow of sleek skyscrapers and amid the buzz of neon lights, the past whispers its stories to those willing to listen. Our modern landscapes are palimpsests, layers of history written and rewritten on the same ground.
-
-The ancient mounds that once dominated the riverbanks now stand dwarfed by steel monuments to human progress. Yet, they persist, a testament to the enduring nature of human endeavor. Similarly, the blues notes that once spilled from modest clubs now compete with the cacophony of traffic and construction, but their soulful cry still touches hearts and moves feet.
-
-As we walk city streets, we tread on cobblestones that have felt the weight of countless generations. The very air we breathe is thick with the dreams and struggles of those who came before us. Our challenge, as inhabitants of these ever-evolving spaces, is to honor these echoes of the past while forging ahead into the future.
-
-By recognizing the threads that connect us to our history, we can create urban environments that are not just functional, but deeply meaningful. In doing so, we ensure that the story of our cities continues to be rich, complex, and profoundly human.`
-    },
-    {
-        title: "The Duality of Progress and Decay",
-        content: `In the dance of urban development, progress and decay move in a complex, intertwined choreography. As new structures rise, reaching ever higher into the sky, others crumble, returning to the earth from which they sprang.
-
-This duality is evident in every aspect of city life. Abandoned factories, once symbols of industrial might, now stand as weathered monuments to a bygone era. Their silent halls echo with memories of bustling activity, while nature slowly reclaims what was once hers.
-
-Yet, from this decay springs new life and new purpose. Street artists transform crumbling walls into canvases of vibrant expression. Entrepreneurs breathe new life into old buildings, creating spaces that honor the past while serving the needs of the present.
-
-The river, too, embodies this duality. Its waters simultaneously erode and nourish, destroy and create. It carries away the old, making room for the new, in an endless cycle of renewal.
-
-As we navigate our changing urban landscapes, we must embrace this duality. Progress need not come at the expense of our heritage, and decay can be the fertile ground from which new ideas and innovations sprout. By understanding and respecting this balance, we can create cities that are not just sustainable, but truly alive – pulsing with the energy of both past and future.`
-    }
-];
+    // Call the function to highlight the current page
+    highlightCurrentPage();
+});
